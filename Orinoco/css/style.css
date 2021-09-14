@@ -1,0 +1,145 @@
+/*********/
+/* Fonts */
+/*********/
+
+.my-font, h1, h2 {
+  font-family: "Merienda One", cursive;
+}
+
+/**********/
+/* Colors */
+/**********/
+
+.fa-shopping-cart {
+  background-image: linear-gradient(
+    135deg,
+    rgba(214, 130, 52, 1) 0%,
+    rgba(143, 91, 254, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  background: linear-gradient(0deg, #ddfcf8 0%, #f3e9f1 90%);
+  background-blend-mode: normal;
+}
+
+.my-color {
+  color: #F8CFA5;
+}
+
+.jumbotron {
+  background-color: #f3e9f1;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+footer {
+  border-top: 1rem solid #F8CFA5;
+}
+
+/************************/
+/* Elements Positioning */
+/************************/
+
+#products,
+#details,
+#myCarousel {
+  margin: 0 auto;
+}
+
+#details {
+  padding: 4rem;
+}
+
+.card {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+aside.card {
+  padding: 2rem;
+  margin: 0;
+}
+
+#products > .card,
+.rounded-borders {
+  border-radius: 1rem;
+}
+
+#price,
+#lenses,
+#button {
+  padding-bottom: 2rem;
+}
+
+.minimum-size {
+  width: 1%;
+}
+
+.list-inline-item {
+  vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
+}
+
+/**************/
+/* Animations */
+/**************/
+
+html {
+  scroll-behavior: smooth;
+}
+
+#products > .card:hover {
+  transition: all 0.2s;
+  margin-top: -0.25rem;
+  background-color: #F3E9F1;
+  color: black;
+}
+
+/********************************************************/
+/* video banner */ 
+/********************************************************/
+
+.bg-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: -60px;
+  bottom: -100px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
+  z-index: 0;
+}
+
+.ov-hidden {
+  overflow: hidden;
+}
+
+/********************************************************/
+/* tablet, landscape iPad, lo-res laptops ands desktops */ 
+/********************************************************/
+@media (min-width:768px) {
+  #myCarousel {
+    max-width: 70%;
+  }
+}
