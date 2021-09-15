@@ -1,9 +1,8 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const cameraRoutes = require('./routes/camera');
-const teddyRoutes = require('./routes/teddy');
-const furnitureRoutes = require('./routes/furniture');
 
 const app = express();
 
@@ -14,14 +13,19 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use(express.static('images'));
+const mytestpath = path.join(__dirname, '../Orinoco/');
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('/Orinoco', express.static(mytestpath));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../Orinoco/', 'index.html'));
+});
+
+app.use('/', express.static(mytestpath));
+
+app.use(bodyParser.json());
 
 app.use('/api/cameras', cameraRoutes);
-app.use('/api/teddies', teddyRoutes);
-app.use('/api/furniture', furnitureRoutes);
 
 module.exports = app;
